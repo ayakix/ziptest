@@ -42,7 +42,7 @@
 
     <div class="container" style="margin-top:50px;">
       <div class="row">
-        <h1>Hello, world!</h1>
+        <h1 id="date">Hello, world!</h1>
       </div>
 
       <div class="row">
@@ -50,7 +50,7 @@
           <button type="button" class="btn btn-primary" id="alert">Alert</button>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-success" id="now">Now</button>
         </div>
       </div>
 
@@ -68,10 +68,27 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
-      });
+      function displayDate() {
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+
+        h = ("0"+h).slice(-2);
+        m = ("0"+m).slice(-2);
+        s = ("0"+s).slice(-2);
+
+        $("#date").text(h+":"+m+":"+s);
+      }
+
       $("#alert").on("click", function(){
         Native.showToast('Alert from JS');
+      });
+      $("#now").on("click", function(){
+        displayDate();
+      });
+
+      $(function(){
       });
     </script>
   </body>
