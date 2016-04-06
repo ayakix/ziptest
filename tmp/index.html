@@ -66,30 +66,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-      function displayDate() {
-        var d = new Date();
-        var h = d.getHours();
-        var m = d.getMinutes();
-        var s = d.getSeconds();
-
-        h = ("0"+h).slice(-2);
-        m = ("0"+m).slice(-2);
-        s = ("0"+s).slice(-2);
-
-        $("#date").text(h+":"+m+":"+s);
-      }
-
-      $("#alert").on("click", function(){
-        Native.showToast('Alert from JS');
-      });
-      $("#now").on("click", function(){
-        displayDate();
-      });
-
-      $(function(){
-      });
-    </script>
+    <script src="js/top.js"></script>
   </body>
 </html>
