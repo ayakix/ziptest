@@ -19,7 +19,7 @@ $("#alert").on("click", function() {
   if (userAgent.indexOf('android') >= 0) {
     Native.showToast('Alert from JS');
   } else {
-    webkit.messageHandlers.showDialog.postMessage("Alert from JS");
+    window.webkit.messageHandlers.showDialog.postMessage("Alert from JS");
   }
 });
 
