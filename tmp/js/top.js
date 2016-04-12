@@ -14,17 +14,16 @@ function displayDate() {
   $("#date").text(h+":"+m+":"+s);
 }
 
-$("#alert").on("click", function(){
+$("#alert").on("click", function() {
   var userAgent = window.navigator.userAgent.toLowerCase();
-    if (userAgent.indexOf('android') >= 0) {
-      Native.showToast('Alert from JS');
-    } else {
-      webkit.messageHandlers.showDialog.postMessage("Alert from JS");
-    }
+  if (userAgent.indexOf('android') >= 0) {
+    Native.showToast('Alert from JS');
+  } else {
+    webkit.messageHandlers.showDialog.postMessage("Alert from JS");
   }
 });
 
-$("#now").on("click", function(){
+$("#now").on("click", function() {
   displayDate();
 });
 
