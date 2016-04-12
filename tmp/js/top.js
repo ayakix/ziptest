@@ -15,7 +15,13 @@ function displayDate() {
 }
 
 $("#alert").on("click", function(){
-  Native.showToast('Alert from JS');
+  var userAgent = window.navigator.userAgent.toLowerCase();
+    if (userAgent.indexOf('android') >= 0) {
+      Native.showToast('Alert from JS');
+    } else {
+      webkit.messageHandlers.showDialog.postMessage("Alert from JS");
+    }
+  }
 });
 
 $("#now").on("click", function(){
